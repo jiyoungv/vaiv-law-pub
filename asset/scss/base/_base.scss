@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+html {scroll-behavior: smooth;}
+body, button, input, select, textarea {@include font-init;}
+body *, body *::before, body *::after {box-sizing: border-box;}
+body {@include scrollbar-style(8);}
+a, img, small {display: inline-block;}
+a {color: inherit;text-decoration: none;}
+img {vertical-align: top;}
+input[type="text"], input[type="password"] {cursor: text;}
+button {color: inherit;cursor: pointer;}
+b, strong {font-weight: $font-bold;}
+::selection {background: $primary;color: $white;}
+
+#wrap {min-width: calc(#{$inner-width} + #{$inner-gutter} * 2);}
+#container {min-height: calc(100vh - #{$header-height} - #{$footer-height});padding: 20px 0 100px;}

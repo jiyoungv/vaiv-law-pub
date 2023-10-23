@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#186B53" />
+  <meta name="description" content="VAIV Law" />
+  <link rel="icon" href="./favicon.ico" />
+  <title>행정안전부 PoC - VAIV</title>
+
+  <!-- vendor -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+  <!-- custom -->
+  <link rel="stylesheet" href="./asset/css/style.css" />
+  <script src="./asset/js/index.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+      <div class="common-inner">
+        <div class="header-row">
+          <div class="header-logo type-mois">
+            <h1>
+              <a href="/" title="홈 바로가기">
+                <img src="./asset/image/logo_mois.png" alt="행정안전부">
+                <em>PoC</em>
+              </a>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="container">
+      <section class="main-tab">
+        <div class="common-inner">
+          <ul class="main-tab-list">
+            <li>
+              <button type="button" data-tab-index="1" class="list-button">
+                <h6>법령</h6>
+                <small>(법률, 대통령령, 부령)</small>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-tab-index="2" class="list-button">
+                <h6>자치법규</h6>
+                <small>(조례, 법규)</small>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-tab-index="3" class="list-button">
+                <h6>행정규칙</h6>
+                <small>(훈령, 예규, 고시)</small>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-tab-index="4" class="list-button">
+                <h6>공공기관 규정</h6>
+                <small>(공공기관, 대학교 등)</small>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <form class="main-form">
+        <div class="common-inner">
+          <div class="main-form-search">
+            <div class="search-input">
+              <input type="text" class="vinput" placeholder="질의문을 입력하세요. 예) 소프트웨어 과업심의위원회를 구성해야 하는데, 어떻게 구성을 해야 하나?" required />
+              <button type="submit" class="search-submit-button">
+                <i class="ri-search-line"></i>
+              </button>
+            </div>
+            <button type="button" class="search-filter-button">
+              <i class="ri-settings-2-line"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+      <section class="main-filter">
+        <div class="common-inner">
+          <div class="filter-area">
+            <button type="button" class="filter-close-button">
+              <i class="ri-close-line"></i>
+            </button>
+            <div class="filter-title">
+              <p>보도자료 검색 설정</p>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row2" id="filter1">
+                <label class="filter-label">법령명</label>
+                <input type="text" class="vinput filter-input" placeholder="예) 119구조ㆍ구급에 관한 법률" />
+              </div>
+              <div class="filter-keyword-area">
+                <div class="filter-keyword">
+                  <p>소프트웨어 진흥법</p>
+                  <button type="button" class="filter-keyword-close-button">
+                    <i class="ri-close-line"></i>
+                  </button>
+                </div>
+                <div class="filter-keyword">
+                  <p>국세기본법</p>
+                  <button type="button" class="filter-keyword-close-button">
+                    <i class="ri-close-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row2">
+                <label class="filter-label type2">소관부처</label>
+                <div class="filter-input-group">
+                  <div class="vradio">
+                    <input type="radio" name="sample-radio" id="sample-radio1" checked />
+                    <label for="sample-radio1">전체</label>
+                  </div>
+                  <div class="vradio">
+                    <input type="radio" name="sample-radio" id="sample-radio2" />
+                    <label for="sample-radio2">행정안전부</label>
+                  </div>
+                  <div class="vradio">
+                    <input type="radio" name="sample-radio" id="sample-radio3" />
+                    <label for="sample-radio3">타 정부기관</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filter-title type2">
+              <p>Q&amp;A 검색 설정</p>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row2">
+                <label class="filter-label type2">검색대상</label>
+                <div class="filter-input-group">
+                  <div class="vcheck">
+                    <input type="checkbox" name="sample-check" id="sample-check1" checked />
+                    <label for="sample-check1">전체</label>
+                  </div>
+                  <div class="vcheck">
+                    <input type="checkbox" name="sample-check" id="sample-check2" />
+                    <label for="sample-check2">주민등록 질의·회신 사례집</label>
+                  </div>
+                  <div class="vcheck">
+                    <input type="checkbox" name="sample-check" id="sample-check3" />
+                    <label for="sample-check3">민원 처리에 관한 법령 해설집</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-result">
+        <div class="common-inner">
+          <article class="main-result-row">
+            <div class="common-skeleton main-result-summary-skeleton">
+              <div class="skeleton-item"></div>
+            </div>
+            <div class="main-result-summary type-tab">
+              <ul class="summary-tab-list">
+                <li>
+                  <button type="button" class="list-button" data-tab-index="1">AI 답변 요약</button>
+                </li>
+                <li>
+                  <button type="button" class="list-button" data-tab-index="2">GeM 답변 요약</button>
+                </li>
+              </ul>
+              <!-- <div class="summary-title">
+                <p>AI 답변 요약</p>
+              </div> -->
+              <div class="summary-text">
+                <p>메타버스의 시장 전망은 낙관적입니다. 메타버스 산업에 대한 투자 전문가들은 글로벌 메타버스 관련주들의 이익 모멘텀을 고려하면 앞으로도 추가 상승을 기대할만한 상황이라고 말하고 있습니다. 빗썸메타 대표는 메타버스가 수용 가능한 웹2 서비스의 시장 규모는 25조원에 달하며, 이 시장을 노리고 있다고 설명하고 있습니다. 또한, 메타버스는 커머스와 소셜 스페이스 시장에 약 8.4조원과 7.5조원 수준으로 추산되는 수용 가능한 웹2.0 서비스로 확장될 것으로 예상되고 있습니다. 이에 따라 메타버스의 시장 전망은 긍정적으로 평가될 수 있습니다.</p>
+              </div>
+            </div>
+          </article>
+          <article class="main-result-row">
+            <div class="common-skeleton main-result-law-skeleton">
+              <div class="skeleton-item"></div>
+              <div class="skeleton-item"></div>
+              <div class="skeleton-item"></div>
+            </div>
+            <div class="main-result-law">
+              <ul class="main-result-law-list">
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>소프트웨어 진흥법</p>
+                    <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                  </a>
+                  <div class="list-text">
+                    <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                      1. 과업내용의 확정
+                      2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                      ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                      ③ 국가기관등의 장과 소프트웨어사업의 계약을 체결한 사업자는 과업내용 변경으로 인한 계약내용 변경이 필요한 경우 국가기관등의 장에게 과업심의위원회의 개최를 요청할 수 있다. 이 경우 국가기관등의 장은 특별한 사정이 없으면 요청을 수용하여야 한다.
+                      ④ 제1항 및 제3항에 따른 과업심의위원회의 구성ㆍ운영, 과업내용의 확정ㆍ변경 및 개최 요청 절차 등에 관하여 필요한 사항은 대통령령으로 정한다.
+                    </p>
+                    <button type="button" class="list-text-toggle-button">
+                      <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                  </div>
+                  <div class="list-foot">
+                    <div class="list-date">
+                      <p>[시행 2021. 12. 30.] [법률 제17799호, 2020. 12. 29, 타법개정] 과학기술정보통신부</p>
+                    </div>
+                    <button type="button" class="list-more-button">다른 내용도 더 볼까요?</button>
+                  </div>
+                  <ul class="main-result-law-list depth2">
+                    <li>
+                      <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                        <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                      </a>
+                      <div class="list-text">
+                        <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                          1. 과업내용의 확정
+                          2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                          ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                        <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                      </a>
+                      <div class="list-text">
+                        <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                          1. 과업내용의 확정
+                          2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                          ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                        <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                      </a>
+                      <div class="list-text">
+                        <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                          1. 과업내용의 확정
+                          2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                          ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>소프트웨어 진흥법2</p>
+                    <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                  </a>
+                  <div class="list-text">
+                    <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                      1. 과업내용의 확정
+                      2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                      ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                    </p>
+                    <button type="button" class="list-text-toggle-button">
+                      <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                  </div>
+                  <div class="list-foot">
+                    <div class="list-date">
+                      <p>[시행 2021. 12. 30.] [법률 제17799호, 2020. 12. 29, 타법개정] 과학기술정보통신부</p>
+                    </div>
+                    <button type="button" class="list-more-button">다른 내용도 더 볼까요?</button>
+                  </div>
+                  <ul class="main-result-law-list depth2">
+                    <li>
+                      <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                        <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                      </a>
+                      <div class="list-text">
+                        <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                          1. 과업내용의 확정
+                          2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                          ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                        <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                      </a>
+                      <div class="list-text">
+                        <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                          1. 과업내용의 확정
+                          2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                          ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                        <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                      </a>
+                      <div class="list-text">
+                        <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                          1. 과업내용의 확정
+                          2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                          ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>소프트웨어 진흥법 시행규칙</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="main-result-law-list">
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>건축서비스산업 진흥법</p>
+                    <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                  </a>
+                  <div class="list-text">
+                    <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                      1. 과업내용의 확정
+                      2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                      ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                      ③ 국가기관등의 장과 소프트웨어사업의 계약을 체결한 사업자는 과업내용 변경으로 인한 계약내용 변경이 필요한 경우 국가기관등의 장에게 과업심의위원회의 개최를 요청할 수 있다. 이 경우 국가기관등의 장은 특별한 사정이 없으면 요청을 수용하여야 한다.
+                      ④ 제1항 및 제3항에 따른 과업심의위원회의 구성ㆍ운영, 과업내용의 확정ㆍ변경 및 개최 요청 절차 등에 관하여 필요한 사항은 대통령령으로 정한다.
+                    </p>
+                    <button type="button" class="list-text-toggle-button">
+                      <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                  </div>
+                  <div class="list-foot">
+                    <div class="list-date">
+                      <p>[시행 2021. 12. 30.] [법률 제17799호, 2020. 12. 29, 타법개정] 과학기술정보통신부</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>건축서비스산업 진흥법2</p>
+                    <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                  </a>
+                  <div class="list-text">
+                    <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                      1. 과업내용의 확정
+                      2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                      ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                    </p>
+                    <button type="button" class="list-text-toggle-button">
+                      <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                  </div>
+                  <div class="list-foot">
+                    <div class="list-date">
+                      <p>[시행 2021. 12. 30.] [법률 제17799호, 2020. 12. 29, 타법개정] 과학기술정보통신부</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>건축서비스산업 진흥법 시행규칙</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="main-result-law-list">
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>건축서비스산업 진흥법</p>
+                    <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                  </a>
+                  <div class="list-text">
+                    <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                      1. 과업내용의 확정
+                      2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                      ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                      ③ 국가기관등의 장과 소프트웨어사업의 계약을 체결한 사업자는 과업내용 변경으로 인한 계약내용 변경이 필요한 경우 국가기관등의 장에게 과업심의위원회의 개최를 요청할 수 있다. 이 경우 국가기관등의 장은 특별한 사정이 없으면 요청을 수용하여야 한다.
+                      ④ 제1항 및 제3항에 따른 과업심의위원회의 구성ㆍ운영, 과업내용의 확정ㆍ변경 및 개최 요청 절차 등에 관하여 필요한 사항은 대통령령으로 정한다.
+                    </p>
+                    <button type="button" class="list-text-toggle-button">
+                      <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                  </div>
+                  <div class="list-foot">
+                    <div class="list-date">
+                      <p>[시행 2021. 12. 30.] [법률 제17799호, 2020. 12. 29, 타법개정] 과학기술정보통신부</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>건축서비스산업 진흥법2</p>
+                    <small>제5장 소프트웨어사업 선진화 > 제2절 소프트웨어사업 추진 > 제50조 (소프트웨어사업 과업심의위원회)</small>
+                  </a>
+                  <div class="list-text">
+                    <p><mark>제50조(소프트웨어사업 과업심의위원회)</mark> ① 국가기관등의 장은 소프트웨어사업의 추진에 관한 다음 각 호의 사항을 심의하기 위하여 소프트웨어사업 과업심의위원회(이하 “과업심의위원회”라 한다)를 두어야 한다.
+                      1. 과업내용의 확정
+                      2. 과업내용 변경의 확정 및 이에 따른 계약금액ㆍ계약기간 조정
+                      ② 국가기관등의 장은 특별한 사정이 없으면 제1항에 따른 심의결과를 계약 등에 반영하여야 한다.
+                    </p>
+                    <button type="button" class="list-text-toggle-button">
+                      <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                  </div>
+                  <div class="list-foot">
+                    <div class="list-date">
+                      <p>[시행 2021. 12. 30.] [법률 제17799호, 2020. 12. 29, 타법개정] 과학기술정보통신부</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a class="list-title" href="https://www.law.go.kr/법령/소프트웨어진흥법/(20211230,17799,20201229)/제50조" target="_blank">
+                    <p>건축서비스산업 진흥법 시행규칙</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+    <footer id="footer">
+      <div class="common-inner">
+        <div class="footer-copy">
+          <p>ⓒ 2023 VAIV Company Inc.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

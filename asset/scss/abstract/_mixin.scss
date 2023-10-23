@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/* hidden */
+@mixin hidden {overflow: hidden;position: absolute;width: 1px;height: 1px;margin: 0;padding: 0;border: 0;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(0px 0px 99.9% 99.9%);}
+@mixin hidden-text {font-size: 0;text-indent: -99999px;}
+@mixin hidden-scrollbar {
+  &::-webkit-scrollbar {display: none;}
+}
+
+/* text-cut */
+@mixin text-cut {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+@mixin text-cut-line($line-height: $line-height1, $line: 2) {display: -webkit-box;max-height: calc(#{$line-height}em * #{$line});overflow: hidden;text-overflow: ellipsis;white-space: normal;word-wrap: break-word;-webkit-line-clamp: $line;-webkit-box-orient: vertical;}
+@mixin text-cut-clear {overflow: initial;display: block;max-height: none;text-overflow: initial;white-space: initial;}
+
+/* font */
+@mixin h1 {font-size: $h1;line-height: $line-height1;}
+@mixin h2 {font-size: $h2;line-height: $line-height1;}
+@mixin h3 {font-size: $h3;line-height: $line-height1;}
+@mixin h4 {font-size: $h4;line-height: $line-height1;}
+@mixin h5 {font-size: $h5;line-height: $line-height1;}
+@mixin h6 {font-size: $h6;line-height: $line-height1;}
+
+@mixin font-large {font-size: $font-large;}
+@mixin font-mid {font-size: $font-mid;}
+@mixin font-base {font-size: $font-base;line-height: $line-height2;} // default
+@mixin font-small {font-size: $font-small;}
+
+@mixin font-init {@include font-base;font-family: $font-family;font-feature-settings: $font-setting;font-weight: $font-regular;letter-spacing: 0;}
+
+/* scroll */
+@mixin scrollbar-style($size: 4) {
+  &::-webkit-scrollbar {width: calc(#{$size} * 1px);height: calc(#{$size} * 1px);}
+  &::-webkit-scrollbar-track {background: transparent;}
+  &::-webkit-scrollbar-thumb {border-radius: 5em;background: $grey300;}
+  &::-webkit-scrollbar-thumb:hover {background: $grey400;}
+}

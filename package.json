@@ -1,0 +1,16 @@
+{
+  "name": "vaiv-law",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "./",
+  "main": "index.js",
+  "scripts": {
+    "sass:dev": "node-sass ./asset/scss/style.scss ./asset/css/style.css --watch --source-map-embed",
+    "sass:prod": "node-sass ./asset/scss/style.scss ./asset/css/style.css --output-style compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

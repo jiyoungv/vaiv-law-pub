@@ -1,0 +1,4 @@
+@charset "utf-8";
+
+#footer {padding: 20px 0;border-top: 1px solid $grey300;}
+.footer-copy p {@include font-small;color: $grey500;font-weight: $font-medium;}

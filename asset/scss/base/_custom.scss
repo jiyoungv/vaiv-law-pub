@@ -1,0 +1,4 @@
+@charset "utf-8";
+
+.ui-widget {@include scrollbar-style;overflow-x: hidden;overflow-y: auto;max-height: 280px;border-radius: $radius1;font-family: inherit;}
+.ui-autocomplete .ui-state-active {border-color: transparent;background: $primary;color: #fff;}

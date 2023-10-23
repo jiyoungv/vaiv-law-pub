@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/* color */
+$primary100: #CDE3F9 !default;
+$primary200: #9DC5F4 !default;
+$primary300: #6799DE !default;
+$primary400: #3F70BE !default;
+$primary500: #103E93 !default;
+$primary600: #0B2F7E !default;
+$primary700: #082369 !default;
+$primary800: #051855 !default;
+$primary900: #031146 !default;
+$primary: $primary500 !default;
+
+$success100: #CFF8CD !default;
+$success200: #9EF1A2 !default;
+$success300: #68D778 !default;
+$success400: #3EAF59 !default;
+$success500: #117A35 !default;
+$success600: #0C6835 !default;
+$success700: #085733 !default;
+$success800: #05462F !default;
+$success900: #033A2C !default;
+$success: $success500 !default;
+
+$warning100: #FFF9CC !default;
+$warning200: #FFF299 !default;
+$warning300: #FFE866 !default;
+$warning400: #FFDF3F !default;
+$warning500: #FFD000 !default;
+$warning600: #DBAE00 !default;
+$warning700: #B78E00 !default;
+$warning800: #937000 !default;
+$warning900: #7A5A00 !default;
+$warning: $warning500 !default;
+
+$danger100: #FDDFD2 !default;
+$danger200: #FBB8A5 !default;
+$danger300: #F48877 !default;
+$danger400: #EA5B54 !default;
+$danger500: #DD212A !default;
+$danger600: #BE182E !default;
+$danger700: #9F1030 !default;
+$danger800: #800A2F !default;
+$danger900: #6A062E !default;
+$danger: $danger500 !default;
+
+$grey100: #F9FAFB !default;
+$grey200: #F4F6F8 !default;
+$grey300: #DFE3E8 !default;
+$grey400: #C4CDD5 !default;
+$grey500: #919EAB !default;
+$grey600: #637381 !default;
+$grey700: #454F5B !default;
+$grey800: #212B36 !default;
+$grey900: #161C24 !default;
+$grey: $grey500 !default;
+
+$black: #333 !default;
+$white: #fff !default;
+
+/* font */
+$font-system: -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !default;
+$font-family: "Pretendard Variable", Pretendard, $font-system !default;
+$font-setting: 'ss01', 'ss08' !default; 
+$font-icon: "remixicon" !default;
+
+$h1: 30px !default;
+$h2: 28px !default;
+$h3: 26px !default;
+$h4: 24px !default;
+$h5: 22px !default;
+$h6: 20px !default;
+$font-large: 18px !default;
+$font-mid: 16px !default;
+$font-base: 14px !default;
+$font-small: 12px !default;
+
+$font-regular: 400 !default;
+$font-medium: 500 !default;
+$font-bold: 700 !default;
+
+$line-height1: 1.4 !default;
+$line-height2: 1.5 !default;
+
+/* z-index */
+$zindex1: 9999999 !default; // 모달
+$zindex2: 8888888 !default; // 헤더
+$zindex3: 7777777 !default; // 그 외
+
+/* radius */
+$radius1: 8px !default;
+$radius2: 10px !default;
+$radius3: 12px !default;
+
+/* layout */
+$inner-width: 1200px !default;
+$inner-gutter: 20px !default;
+$header-height: 80px !default;
+$footer-height: 60px !default;
+
+/* speed */
+$transition-speed: 0.2s !default;

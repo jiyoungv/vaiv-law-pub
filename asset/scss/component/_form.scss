@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/* vinput */
+.vinput {display: block;padding: 5px 10px;border: 1px solid $grey400;border-radius: $radius1;background: $white;color: $grey900;transition: border $transition-speed;}
+.vinput::placeholder {color: $grey400;}
+.vinput:focus {outline: none;border-color: $primary;}
+.vinput.full {width: 100%;}
+
+/* vradio */
+.vradio {position: relative;}
+.vradio input {@include hidden;}
+.vradio label {display: inline-block;position: relative;padding-left: calc(6px + 6px);color: $grey400;font-weight: $font-medium;cursor: pointer;transition: color $transition-speed;}
+.vradio label::before {content: '';display: inline-block;position: absolute;top: 50%;left: 0;transform: translate(0, -50%);width: 6px;height: 6px;border-radius: 50%;background: $grey400;transition: background $transition-speed;;}
+.vradio input:checked + label {color: $primary;}
+.vradio input:checked + label::before {background: $primary;}
+
+/* vcheck */
+.vcheck {position: relative;}
+.vcheck input {@include hidden;}
+.vcheck label {display: inline-block;position: relative;padding-left: calc(16px + 4px);color: $grey400;font-weight: $font-medium;cursor: pointer;transition: color $transition-speed;}
+.vcheck label::before {content: '\eb7b';display: inline-block;position: absolute;top: 50%;left: 0;transform: translate(0, -50%);color: inherit;font-size: 16px;font-family: $font-icon;}
+.vcheck input:checked + label {color: $primary;}

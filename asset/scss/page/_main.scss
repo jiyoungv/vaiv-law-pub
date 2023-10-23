@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+.main-tab {margin-bottom: 40px;}
+.main-tab-list {display: flex;justify-content: space-evenly;align-items: center;gap: 20px;}
+.main-tab-list > li {width: calc(100% / 4);}
+.main-tab-list > li:not(.active):hover .list-button {transform: translate(0, 5px);background: $primary300;color: $white;}
+.main-tab-list > li.active .list-button {background: $primary;color: $white;}
+.main-tab-list > li.active .list-button h6 {font-weight: $font-bold;}
+.main-tab-list .list-button {width: 100%;padding: 12px 6px;border: 0;border-radius: $radius1;background: $grey300;color: $grey;transition: all $transition-speed;}
+.main-tab-list .list-button h6 {@include h6;}
+
+.main-form-search {display: flex;align-items: center;gap: 10px;}
+.main-form-search .search-input {flex-grow: 1;position: relative;}
+.main-form-search .search-input .vinput {@include font-mid;width: 100%;padding: 10px calc(46px * 2 + 12px) 10px 12px;}
+.main-form-search .search-submit-button {display: inline-flex;justify-content: center;align-items: center;position: absolute;right: 0;top: 50%;width: calc(46px * 2);height: 46px;transform: translate(0, -50%);border: 0;border-radius: 0 $radius1 $radius1 0;background: $primary;color: $white;font-size: $h4;line-height: 1;transition: background $transition-speed;}
+.main-form-search .search-submit-button:hover {background: $primary400;}
+.main-form-search .search-filter-button {flex-shrink: 0;display: inline-flex;justify-content: center;align-items: center;width: 42px;height: 42px;border: 0;border-radius: $radius1;background: transparent;color: $grey;font-size: $h4;line-height: 1;transition: background $transition-speed;}
+.main-form-search .search-filter-button:hover {background: rgba($black, 0.1);}
+
+.main-filter {display: none;margin-top: 20px;}
+.main-filter.show {display: block;}
+.main-filter .filter-area {position: relative;padding: 20px;border-radius: $radius2;background: $grey200;}
+.main-filter .filter-close-button {display: inline-flex;justify-content: center;align-items: center;position: absolute;top: 15px;right: 15px;width: 30px;height: 30px;border: 0;border-radius: $radius1;background: transparent;color: $grey900;font-size: $h5;line-height: 1;transition: background $transition-speed;}
+.main-filter .filter-close-button:hover {background: rgba($black, 0.1);}
+.main-filter .filter-title {margin-bottom: 10px;}
+.main-filter .filter-title.type2 {margin-top: 20px;}
+.main-filter .filter-title p {@include font-mid;color: $grey900;font-weight: $font-bold;}
+.main-filter .filter-row {padding: 0 6px;}
+.main-filter .filter-row:not(:last-child) {margin-bottom: 12px;}
+.main-filter .filter-row2 {display: flex;align-items: flex-start;gap: 10px;}
+.main-filter .filter-label {flex-shrink: 0;display: inline-block;width: 120px;height: 33px;line-height: 33px;color: $grey700;font-weight: $font-medium;}
+.main-filter .filter-label.type2 {height: 21px;line-height: 21px;}
+.main-filter .filter-input {width: 700px;}
+.main-filter .filter-input-group {display: flex;flex-wrap: wrap;align-items: center;gap: 8px 20px;}
+.main-filter .filter-keyword-area {display: flex;flex-wrap: wrap;align-items: center;gap: 6px 10px;margin-left: 130px;margin-top: 6px;}
+.main-filter .filter-keyword {display: inline-flex;align-items: center;gap: 6px;padding: 4px 6px 4px 10px;border-radius: $radius2;background: $primary300;color: $white;}
+.main-filter .filter-keyword p {@include font-small;font-weight: $font-medium;}
+.main-filter .filter-keyword-close-button {display: inline-flex;justify-content: center;align-items: center;width: 20px;height: 20px;margin-top: -1px;border: 0;border-radius: $radius1;background: 0;font-size: $font-mid;line-height: 1;transition: background $transition-speed;}
+.main-filter .filter-keyword-close-button:hover {background: rgba($white, 0.1);}
+
+.main-result {margin-top: 40px;}
+.main-result-row:not(:last-child) {margin-bottom: 40px;}
+
+.main-result-summary {display: none;position: relative;padding: 14px 16px;border: 2px solid $primary;border-radius: $radius1;}
+.main-result-summary.show {display: block;}
+.main-result-summary.type-tab {margin-top: calc(33.6px * 2);border-top-left-radius: 0;}
+.main-result-summary .summary-tab-list {z-index: 5;display: flex;gap: 5px;position: absolute;top: 0;left: -2px;transform: translate(0, -100%);}
+.main-result-summary .summary-tab-list > li:not(.active) .list-button:hover {background: $primary500;}
+.main-result-summary .summary-tab-list > li.active .list-button {border-color: $primary;background: transparent;color: $primary;font-weight: $font-bold;}
+.main-result-summary .summary-tab-list > li.active .list-button::after {background: $white}
+.main-result-summary .summary-tab-list .list-button {@include font-mid;position: relative;min-width: 140px;padding: 4px 10px;border: 2px solid transparent;border-bottom: 0;border-radius: $radius2 $radius2 0 0;background: $primary400;color: $white;text-align: center;}
+.main-result-summary .summary-tab-list .list-button::after {content: '';display: block;position: absolute;left: 0;bottom: 0;width: 100%;height: 2px;background: $primary;}
+.main-result-summary .summary-title {margin-bottom: 12px;padding-bottom: 6px;border-bottom: 1px solid $grey400;}
+.main-result-summary .summary-title p {@include font-mid;color: $primary;font-weight: $font-bold;}
+.main-result-summary .summary-text p {color: $grey700;}
+
+.main-result-law {display: none;}
+.main-result-law.show {display: block;}
+.main-result-law-list:not(.depth2) {border-left: 10px solid transparent;}
+.main-result-law-list:not(.depth2):nth-child(odd) {border-left-color: $primary300;}
+.main-result-law-list:not(.depth2):nth-child(even) {border-left-color: $grey300;}
+.main-result-law-list > li {padding: 16px 16px 18px;border-right: 1px solid $grey300;border-bottom: 1px solid $grey300;}
+.main-result-law-list:first-child > li:first-child {border-top: 1px solid $grey300;}
+.main-result-law-list .list-title {display: inline-flex;flex-wrap: wrap;align-items: flex-end;gap: 2px 6px;border-bottom: 1px solid transparent;}
+.main-result-law-list .list-title p {@include font-mid;display: inline-block;color: $grey800;font-weight: $font-bold;transition: color $transition-speed;}
+.main-result-law-list .list-title:hover {border-color: $grey900;}
+.main-result-law-list .list-title:hover p {color: $primary;}
+.main-result-law-list .list-title small {@include font-small;color: $primary400;font-weight: $font-medium;transition: all $transition-speed;}
+.main-result-law-list .list-text {position: relative;margin-top: 10px;}
+.main-result-law-list .list-text.cut-toggle::after {content: '';display: block;position: absolute;left: 0;bottom: 0;width: 100%;height: calc(#{$font-base} * #{$line-height2} * 1.5);background: linear-gradient(180deg, transparent 0%, #FFF 100%);}
+.main-result-law-list .list-text.cut-toggle p {@include text-cut-line($line-height2, 5);white-space: pre-line;}
+.main-result-law-list .list-text.cut-toggle.open {padding-bottom: 20px;}
+.main-result-law-list .list-text.cut-toggle.open::after {display: none;}
+.main-result-law-list .list-text.cut-toggle.open p {@include text-cut-clear;white-space: pre-line;}
+.main-result-law-list .list-text.cut-toggle.open .list-text-toggle-button {transform: translate(-50%, 0) rotate(180deg);}
+.main-result-law-list .list-text.cut-toggle.open .list-text-toggle-button:hover {transform: translate(-50%, -4px) rotate(180deg);}
+.main-result-law-list .list-text p {color: $grey700;white-space: pre-line;}
+.main-result-law-list .list-text p mark {background: $primary100;color: $primary;font-weight: $font-medium;}
+.main-result-law-list .list-text-toggle-button {z-index: 5;display: none;justify-content: center;align-items: center;position: absolute;bottom: 0;left: 50%;transform: translate(-50%, 0);width: 20px;height: 20px;border: 1px solid $primary;border-radius: 50%;background: $white;color: $primary;transition: transform $transition-speed;cursor: pointer;}
+.main-result-law-list .list-text-toggle-button.show {display: inline-flex;}
+.main-result-law-list .list-text-toggle-button:hover {transform: translate(-50%, 4px);}
+.main-result-law-list .list-text-toggle-button i {flex-shrink: 0;}
+.main-result-law-list .list-foot {display: flex;justify-content: space-between;align-items: flex-end;margin-top: 10px;}
+.main-result-law-list .list-date p {@include font-small;color: $grey;}
+.main-result-law-list .list-more-button {padding: 4px 12px;border: 0;border-radius: $radius1;background: $grey600;color: $white;transition: background $transition-speed;}
+.main-result-law-list .list-more-button:hover {background: $primary;}
+.main-result-law-list.depth2 {display: none;margin: 10px 20px 0;}
+.main-result-law-list.depth2.show {display: block;}
+.main-result-law-list.depth2 > li {border-right: 0;}
+.main-result-law-list.depth2 > li:last-child {border-bottom: 0;}

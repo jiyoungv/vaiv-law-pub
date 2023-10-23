@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+#header {}
+.header-row {position: relative;height: 80px;}
+.header-logo {position: absolute;left: 0;top: 50%;transform: translate(0, -50%);}
+.header-logo h1 {@include h1;color: $grey900;font-weight: $font-bold;}
+.header-logo h1 a {display: inline-flex;align-items: center;gap: 8px;}
+.header-logo h1 img {height: 22px;}
+.header-logo h1 em {color: $primary;}
+.header-logo.type-mois h1 {@include h2;height: 42px;}
+.header-logo.type-mois h1 img {height: 42px;}
+
+#gnb {background: $primary;}
+.gnb-list {display: flex;align-items: center;gap: 50px;}
+.gnb-list > li.active .list-link {opacity: 1;font-weight: $font-bold;}
+.gnb-list .list-link {@include font-large;opacity: 0.5;position: relative;padding: 5px 0;color: $white;transition: opacity $transition-speed;}
+.gnb-list .list-link:hover {opacity: 0.8;}
